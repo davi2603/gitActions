@@ -2,9 +2,9 @@ name: Laboratorio
 on: workflow_dispatch 
 jobs:
   first_job:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - name: Ola Mundo
-      run: echo "Hello World"
-    - name: Adeus Mundo
-      run: echo "Farewell World"
+      - name: Ola Mundo
+        run: echo "Hello World"
+      - name: Adeus Mundo
+        run: echo "Farewell World"
