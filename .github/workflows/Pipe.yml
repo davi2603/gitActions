@@ -1,10 +1,16 @@
 name: Laboratorio
-on: workflow_dispatch 
+on: push
 jobs:
-  first_job:
+  teste:
     runs-on: ubuntu-latest
     steps:
-      - name: Ola Mundo
-        run: echo "Hello World"
-      - name: Adeus Mundo
-        run: echo "Farewell World"
+      - name: Pegar Codigo
+        uses: actions/checkout@v3
+      - name: Instalar NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Run tests
+        run: npm test
