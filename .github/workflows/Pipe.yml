@@ -14,3 +14,19 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+  deploy:
+    needs: teste
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pegar Codigo
+        uses: actions/checkout@v3
+      - name: Instalar NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Deploy
+        run: echo "Deploying..."
