@@ -11,7 +11,7 @@ jobs:
     environment: testing
     runs-on: ubuntu-latest
     env:
-      MONGODB_CLUSTER_ADDRESS: cluster0.tphr2sl.mongodb.net
+      MONGODB_CLUSTER_ADDRESS: cluster0.sxpb06w.mongodb.net
       MONGODB_USERNAME: dbuset
       MONGODB_PASSWORD: 73rhws2t
       PORT: 8080
