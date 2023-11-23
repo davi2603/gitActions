@@ -1,2 +1,0 @@
-# gitActions
-Projeto de esteira
