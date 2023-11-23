@@ -17,15 +17,9 @@ jobs:
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
-      - name: Test code
-        id: run-testes
-        run: npm run test
-      - name: Upload test report
-        if: failure() && steps.run-testes.outcome == 'failure' 
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-report
-          path: test.json
+      - name: Lint code
+        run: npm run lint
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -40,8 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Test code
+        id: run-tests
         run: npm run test
       - name: Upload test report
+        if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: test-report
