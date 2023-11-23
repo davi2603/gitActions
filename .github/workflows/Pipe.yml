@@ -19,7 +19,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
-
   test:
     runs-on: ubuntu-latest
     steps:
